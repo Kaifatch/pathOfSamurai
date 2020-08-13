@@ -1,0 +1,15 @@
+.message {
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: justify;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.message:nth-child(odd) {
+  text-align: start;
+}
+
+.message:nth-child(even) {
+  text-align: end;
+}

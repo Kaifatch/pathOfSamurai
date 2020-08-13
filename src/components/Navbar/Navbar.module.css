@@ -1,0 +1,33 @@
+.nav {
+  grid-area: nav;
+  border-bottom: 1px solid transparent;
+  border-color: #2e2e2e;
+  background: #212121;
+}
+
+.item > a {
+  line-height: 48px;
+  padding-left: 16px;
+  font-size: 1.15rem;
+  display: block;
+}
+
+.item a {
+  text-decoration: none;
+  color: #757575;
+  flex-grow: 1;
+}
+
+.nav ul li a:hover {
+  background-color: #000;
+}
+
+.item a.activeLink {
+  color: #fff;
+}
+
+.friends {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}

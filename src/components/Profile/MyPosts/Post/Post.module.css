@@ -1,0 +1,18 @@
+.item {
+  background: #fff;
+  border: 1px solid #e2e9e6;
+  margin-bottom: 20px;
+  box-shadow: 0;
+}
+.item img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.likesCount {
+  display: block;
+  background: #26a69a;
+  color: #fff;
+}

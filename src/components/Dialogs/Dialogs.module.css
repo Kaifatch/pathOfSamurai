@@ -1,0 +1,36 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+  padding: 10px;
+}
+
+.dialog {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e2e9e6;
+}
+
+.dialogsItems .activeDialog {
+  background: #26a69a;
+  border-color: #26a69a;
+}
+
+.dialog > a {
+  display: block;
+  text-decoration: none;
+  color: #212121;
+}
+
+.dialog > a.activeDialog {
+  color: #fff;
+}
+
+.messages {
+  margin-right: 5px;
+  margin-top: 5px;
+  display: flex;
+  align-items: stretch;
+}
