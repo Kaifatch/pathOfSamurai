@@ -1,3 +1,9 @@
+const ADD_POST = "ADD-POST";
+const SET_NEW_POST_TEXT = "SET-NEW-POST-TEXT";
+const SEND_MESSAGE = "SEND-MESSAGE";
+const SET_NEW_MESSAGE_TEXT = "SET-NEW-MESSAGE-TEXT";
+
+
 let store = {
   _state: {
     profilePage: {
@@ -101,46 +107,51 @@ let store = {
     console.log('no subscribers(observers)')
   },
 
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+
   getState() {
     return this._state;
   },
 
-  addPost() {
-    let newPost = {
-      id: "5",
-      message: this._state.profilePage.newPostText,
-      likesCount: "0"
-    };
+  dispatch(action) {
+    if (action.type === ADD_POST) {
+      let newPost = {
+        id: "5",
+        message: this._state.profilePage.newPostText,
+        likesCount: "0"
+      };
 
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._callSubscriber(this._state);
-  },
-
-  sendMessage() {
-    let newMessage = {
-      id: "6",
-      message: this._state.dialogsPage.newMessageText
-    };
-    this._state.dialogsPage.messages.push(newMessage);
-    this._state.dialogsPage.newMessageText = "";
-    this._callSubscriber(this._state);
-  },
-
-  setNewPostText(postText) {
-    this._state.profilePage.newPostText = postText;
-    this._callSubscriber(this._state);
-  },
-
-  setNewMessageText(messageText) {
-    this._state.dialogsPage.newMessageText = messageText;
-    this._callSubscriber(this._state);
-  },
-
-  subscribe(observer) {
-    this._callSubscriber = observer;
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === SET_NEW_POST_TEXT) {
+      this._state.profilePage.newPostText = action.postText;
+      this._callSubscriber(this._state);
+    } else if (action.type === SEND_MESSAGE) {
+      let newMessage = {
+        id: "6",
+        message: this._state.dialogsPage.newMessageText
+      };
+      this._state.dialogsPage.messages.push(newMessage);
+      this._state.dialogsPage.newMessageText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === SET_NEW_MESSAGE_TEXT) {
+      this._state.dialogsPage.newMessageText = action.messageText;
+      this._callSubscriber(this._state);
+    }
   }
+};
 
-}
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const setNewPostTextActionCreator = (text) =>
+  ({ type: SET_NEW_POST_TEXT, postText: text });
+
+export const sendMessageActionCreator = () => ({ type: SEND_MESSAGE });
+
+export const setNewMessageTextActionCreator = (text) =>
+  ({ type: SET_NEW_MESSAGE_TEXT, messageText: text });
 
 export default store;
