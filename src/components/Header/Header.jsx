@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <img src="https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png" />
+      <img src="https://www.pinclipart.com/picdir/big/91-918525_react-logos-download-green-tree-logo-tree-logo.png" />
     </header>
   );
 };

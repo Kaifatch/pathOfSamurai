@@ -4,9 +4,7 @@ const SET_USERS = 'SET-USERS';
 
 let initialState = {
   users: [
-    // { id: 1, photoUrl: 'https://cdn.pixabay.com/photo/2019/10/30/07/04/paint-4588860_960_720.png', followed: true, fullName: 'Alexandr', status: 'I am a Boss', location: { city: 'Minsk', country: 'Belarus' } },
-    //  { id: 2, photoUrl: 'https://cdn.pixabay.com/photo/2019/10/30/07/04/paint-4588860_960_720.png', followed: false, fullName: 'Sergey', status: 'I am a Boss too', location: { city: 'Kiev', country: 'Ukraine' } },
-    //  { id: 3, photoUrl: 'https://cdn.pixabay.com/photo/2019/10/30/07/04/paint-4588860_960_720.png', followed: true, fullName: 'Anton', status: 'I am a Boss too', location: { city: 'Togliatty', country: 'Russia' } }
+
   ]
 };
 
