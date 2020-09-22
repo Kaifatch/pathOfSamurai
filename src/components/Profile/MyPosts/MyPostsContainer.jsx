@@ -3,7 +3,7 @@ import {
   addPostCreator,
   setNewPostTextCreator,
 } from "../../../redux/profile-reducer";
-import MyPosts from "./MyPosts";
+import MyPosts from "./MyPostsC";
 import { connect } from "react-redux";
 
 // const MyPostsContainer = () => {

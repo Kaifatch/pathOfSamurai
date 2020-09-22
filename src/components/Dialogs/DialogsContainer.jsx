@@ -3,7 +3,7 @@ import {
   sendMessageCreator,
   setNewMessageBodyCreator,
 } from "../../redux/dialogs-reducer";
-import Dialogs from "./Dialogs";
+import Dialogs from "./DialogsC";
 import { connect } from "react-redux";
 
 // const DialogsContainer = () => {
