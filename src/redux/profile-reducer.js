@@ -1,7 +1,9 @@
 const ADD_POST = "ADD-POST";
 const SET_NEW_POST_TEXT = "SET-NEW-POST-TEXT";
+const SET_USER_PROFILE = "SET-USER-PROFILE"
 
 let initialState = {
+  profile: null,
   posts: [
     {
       id: 1,
@@ -51,6 +53,12 @@ const profileReducer = (state = initialState, action) => {
         newPostText: action.postText
       };
 
+    case SET_USER_PROFILE:
+      return {
+        ...state,
+        profile: action.profile
+      }
+
     default:
       return state;
   }
@@ -60,5 +68,7 @@ export const addPost = () => ({ type: ADD_POST });
 
 export const setNewPostText = (text) =>
   ({ type: SET_NEW_POST_TEXT, postText: text });
+
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 
 export default profileReducer;
