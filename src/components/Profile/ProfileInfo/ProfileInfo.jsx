@@ -6,7 +6,7 @@ const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
-
+  debugger;
   return (
     <div>
       <div className={styles.profileImg}>
@@ -75,12 +75,10 @@ const ProfileInfo = (props) => {
           Looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}
         </div>
         <div>
-          Looking description:{" "}
-          {props.profile.lookingForAJobDescription != null
-            ? props.profile.lookingForAJobDescription
-            : "none"}
+          {props.profile.lookingForAJob
+            ? `Looking job description: ${props.profile.lookingForAJobDescription}`
+            : null}
         </div>
-        ava + description
       </div>
     </div>
   );
