@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import * as axios from "axios";
 import { connect } from "react-redux";
 import { setUserProfile } from "../../redux/profile-reducer";
+import { setUserPhoto } from "../../redux/auth-reducer";
 import { withRouter } from "react-router-dom";
 import { profileAPI } from "../../api/api";
 
@@ -13,7 +14,9 @@ class ProfileContainer extends React.Component {
       userId = this.props.authorizedUserId;
     }
     profileAPI.getUserProfile(userId).then((data) => {
+      debugger;
       this.props.setUserProfile(data);
+      this.props.setUserPhoto(data.photos.small);
     });
   }
   render() {
@@ -32,6 +35,6 @@ let mapStateToProps = (state) => ({
 
 let WithUrlDataContainerComponent = withRouter(ProfileContainer);
 
-export default connect(mapStateToProps, { setUserProfile })(
+export default connect(mapStateToProps, { setUserProfile, setUserPhoto })(
   WithUrlDataContainerComponent
 );

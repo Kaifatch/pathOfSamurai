@@ -8,7 +8,11 @@ const Header = (props) => {
       <img src="https://www.pinclipart.com/picdir/big/91-918525_react-logos-download-green-tree-logo-tree-logo.png" />
 
       <div className={styles.loginBlock}>
-        {props.isAuth ? props.login : <NavLink to={"/login"}>Login</NavLink>}
+        {props.isAuth ? (
+          <img src={`${props.smallPhoto}`} alt="" />
+        ) : (
+          <NavLink to={"/login"}>Login</NavLink>
+        )}
       </div>
     </header>
   );

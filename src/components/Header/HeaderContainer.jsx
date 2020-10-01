@@ -3,8 +3,9 @@ import React from "react";
 import Header from "./Header";
 import * as axios from "axios";
 import { connect } from "react-redux";
-import { setAuthUserData, setUserPhoto } from "../../redux/auth-reducer";
+import { setAuthUserData } from "../../redux/auth-reducer";
 import { authAPI } from "../../api/api";
+import { withRouter } from "react-router-dom";
 
 class HeaderContainer extends React.Component {
   componentDidMount() {
@@ -27,6 +28,7 @@ class HeaderContainer extends React.Component {
 const mapStateToProps = (state) => ({
   isAuth: state.auth.isAuth,
   login: state.auth.login,
+  smallPhoto: state.auth.smallPhoto,
 });
 
 export default connect(mapStateToProps, { setAuthUserData })(HeaderContainer);
