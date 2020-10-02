@@ -3,7 +3,7 @@ import preloader from "../../../assets/images/loading.svg";
 
 let Preloader = (props) => {
   return (
-    <img src={preloader} />
+    <img src={preloader} alt="" />
   )
 }
 

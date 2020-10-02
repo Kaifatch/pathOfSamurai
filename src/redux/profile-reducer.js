@@ -1,3 +1,6 @@
+import { usersAPI } from "../api/api";
+import { setUserPhoto } from "./auth-reducer";
+
 const ADD_POST = "ADD-POST";
 const SET_NEW_POST_TEXT = "SET-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET-USER-PROFILE"
@@ -70,5 +73,15 @@ export const setNewPostText = (text) =>
   ({ type: SET_NEW_POST_TEXT, postText: text });
 
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
+
+export const getUserProfile = (userId) => {
+  return (dispatch) => {
+    usersAPI.getProfile(userId).then((response) => {
+      dispatch(setUserProfile(response.data));
+      dispatch(setUserPhoto(response.data.photos.small));
+    });
+  }
+}
+
 
 export default profileReducer;

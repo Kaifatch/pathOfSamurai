@@ -15,3 +15,8 @@
 .loginBlock a {
   color: #fff;
 }
+
+.loginBlock > img {
+  height: 60px;
+  padding: 5px;
+}
