@@ -23,7 +23,10 @@ export const usersAPI = {
   },
   getProfile(userId) {
     return instance.get(`profile/${userId}`);
-  }
+  },
+  // getStatus(userId) {
+  //   return instance.get(`status/${userId}`);
+  // }
 };
 
 export const authAPI = {
