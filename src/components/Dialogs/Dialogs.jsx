@@ -14,12 +14,13 @@ let Dialogs = (props) => {
   };
 
   let dialogsElements = props.dialogsPage.dialogs.map((d) => (
-    <DialogItem name={d.name} key={d.id} id={d.id} />
+    <DialogItem name={d.name} key={d.id} id={d.id}/>
   ));
 
   let messagesElements = props.dialogsPage.messages.map((m) => (
-    <Message message={m.message} key={m.id} />
+    <Message message={m.message} key={m.id}/>
   ));
+
   return (
     <div className={styles.dialogs}>
       <ul className={styles.dialogsItems}>{dialogsElements}</ul>
