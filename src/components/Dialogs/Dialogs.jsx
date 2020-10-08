@@ -2,15 +2,12 @@ import React from "react";
 import styles from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import AddMessageForm from "./AddMessageForm/AddMessageForm";
 
 let Dialogs = (props) => {
-  let newMessageBody = props.dialogsPage.newMessageBody;
 
-  let onMessageSend = () => props.sendMessage();
-
-  let onMessageType = (event) => {
-    let body = event.target.value;
-    props.setNewMessageBody(body);
+  let addNewMessage = (values) => {
+    props.sendMessage(values.newMessageBody)
   };
 
   let dialogsElements = props.dialogsPage.dialogs.map((d) => (
@@ -26,19 +23,11 @@ let Dialogs = (props) => {
       <ul className={styles.dialogsItems}>{dialogsElements}</ul>
       <div className={styles.messages}>
         <div>{messagesElements}</div>
-        <div>
-          <textarea
-            placeholder="Enter your message"
-            onChange={onMessageType}
-            value={newMessageBody}
-          />
-        </div>
-        <div>
-          <button onClick={onMessageSend}>Send</button>
-        </div>
+        <AddMessageForm onSubmit={addNewMessage}/>
       </div>
     </div>
   );
 };
+
 
 export default Dialogs;

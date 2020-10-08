@@ -76,8 +76,7 @@ export const setTotalUsersCount = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
 export const toggleFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 
-export const getUsers = (currentPage, pageSize) => {
-  return (dispatch) => {
+export const getUsers = (currentPage, pageSize) => (dispatch) => {
     dispatch(toggleIsFetching(true));
 
     usersAPI
@@ -88,11 +87,9 @@ export const getUsers = (currentPage, pageSize) => {
         dispatch(setTotalUsersCount(data.totalCount));
         dispatch(setCurrentPage(currentPage))
       });
-  }
 }
 
-export const follow = (userId) => {
-  return (dispatch) => {
+export const follow = (userId) => (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
 
     usersAPI.follow(userId).then((response) => {
@@ -101,10 +98,8 @@ export const follow = (userId) => {
       }
       dispatch(toggleFollowingProgress(false, userId));
     });
-  }
 }
-export const unfollow = (userId) => {
-  return (dispatch) => {
+export const unfollow = (userId) => (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
 
     usersAPI.unfollow(userId).then((response) => {
@@ -113,7 +108,6 @@ export const unfollow = (userId) => {
       }
       dispatch(toggleFollowingProgress(false, userId));
     });
-  }
 }
 
 export default usersReducer;
