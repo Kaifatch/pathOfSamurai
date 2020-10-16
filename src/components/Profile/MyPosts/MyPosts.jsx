@@ -3,13 +3,13 @@ import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import AddPostForm from "./AddPostForm/AddPostForm";
 
-const MyPosts = (props) => {
-  let postsElements = props.posts.map((p) => (
+const MyPosts = ({posts, addPost}) => {
+  let postsElements = posts.map((p) => (
     <Post message={p.message} likesCount={p.likesCount}/>
   ));
 
   let addNewPost = (value) => {
-    props.addPost(value.newPostText)
+    addPost(value.newPostText)
   }
 
   return (

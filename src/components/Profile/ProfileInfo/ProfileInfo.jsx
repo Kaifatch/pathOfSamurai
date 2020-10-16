@@ -2,94 +2,34 @@ import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import styles from "./ProfileInfo.module.css";
 import userPhoto from "../../../assets/images/user.png";
-import ProfileStatus from "./ProfileStatus"
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import ProfileContacts from "./ProfileContacts";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
-    return <Preloader />;
+const ProfileInfo = ({profile, status, updateUserStatus}) => {
+  if (!profile) {
+    return <Preloader/>;
   }
   return (
     <div>
-      {/*<div className={styles.profileImg}>*/}
-      {/*  <img*/}
-      {/*    src="https://cdn.pixabay.com/photo/2020/06/28/16/04/alpine-5349811_960_720.jpg"*/}
-      {/*    alt=""*/}
-      {/*  />*/}
-      {/*</div>*/}
       <div className={styles.descriptionBlock}>
         <img
           src={
-            props.profile.photos.large != null
-              ? props.profile.photos.large
+            profile.photos.large != null
+              ? profile.photos.large
               : userPhoto
           }
           alt=""
         />
-        <div>{props.profile.fullName}</div>
-        <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus}/>
-        <div>About me: {props.profile.aboutMe}</div>
+        <div>{profile.fullName}</div>
+        <ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus}/>
+        <div>About me: {profile.aboutMe}</div>
+        <ProfileContacts contacts={profile.contacts}/>
         <div>
-          Contacts:
-          <ul>
-            <li>
-              {props.profile.contacts.facebook != null ? (
-                <a href={`https://${props.profile.contacts.facebook}`}>
-                  Facebook
-                </a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.website != null ? (
-                <a href={`https://${props.profile.contacts.website}`}>
-                  WebSite
-                </a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.vk != null ? (
-                <a href={`https://${props.profile.contacts.vk}`}>VK</a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.twitter != null ? (
-                <a href={`${props.profile.contacts.twitter}`}>Twitter</a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.instagram != null ? (
-                <a href={`https://${props.profile.contacts.instagram}`}>
-                  Instagram
-                </a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.youtube != null ? (
-                <a href={`https://${props.profile.contacts.youtube}`}>
-                  YouTube
-                </a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.github != null ? (
-                <a href={`https://${props.profile.contacts.github}`}>GitHub</a>
-              ) : null}
-            </li>
-            <li>
-              {props.profile.contacts.mainLink != null ? (
-                <a href={`https://${props.profile.contacts.mainLink}`}>
-                  Main Link
-                </a>
-              ) : null}
-            </li>
-          </ul>
+          Looking for a job: {profile.lookingForAJob ? "yes" : "no"}
         </div>
         <div>
-          Looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}
-        </div>
-        <div>
-          {props.profile.lookingForAJob
-            ? `Looking job description: ${props.profile.lookingForAJobDescription}`
+          {profile.lookingForAJob
+            ? `Looking job description: ${profile.lookingForAJobDescription}`
             : null}
         </div>
       </div>

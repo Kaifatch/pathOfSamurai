@@ -1,9 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import styles from "./Header.module.css";
-import userPhoto from "../../assets/images/user.png";
 
-const Header = (props) => {
+const Header = ({isAuth, login, logout}) => {
   return (
     <header className={styles.header}>
       <img
@@ -12,16 +11,9 @@ const Header = (props) => {
       />
 
       <div className={styles.loginBlock}>
-        {props.isAuth ? <div>{props.login} <button onClick={props.logout}>Logout</button></div>
-          // <div>
-          //   <NavLink to={"/profile"}>
-          //     <img
-          //       src={props.smallPhoto != null ? props.smallPhoto : userPhoto}
-          //       alt=""
-          //     />
-          //   </NavLink>
-          // <button onClick={props.logout}>Logout</button>
-          // </div>
+        {isAuth ? <div>{login}
+            <button onClick={logout}>Logout</button>
+          </div>
           : <NavLink to={"/login"}>Login</NavLink>
         }
       </div>
