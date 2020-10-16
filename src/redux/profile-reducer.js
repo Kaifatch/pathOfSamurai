@@ -4,6 +4,7 @@ import {setUserPhoto} from "./auth-reducer";
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_USER_STATUS = "SET-USER-STATUS";
+const DELETE_POST = "DELETE-POST"
 
 let initialState = {
   profile: null,
@@ -62,12 +63,17 @@ const profileReducer = (state = initialState, action) => {
         status: action.status
       }
 
+    case DELETE_POST:
+      return {...state, posts: state.posts.filter(p => p.id != action.postId)}
+
     default:
       return state;
   }
 }
 
 export const addPost = (newPostText) => ({type: ADD_POST, newPostText});
+
+export const deletePost = (postId) => ({type: DELETE_POST, postId})
 
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
