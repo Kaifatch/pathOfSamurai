@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d8882b473b3a0a420d1b15e0290f4979",
+    "revision": "ae07bf208c4fbc6eeb5b6bd0c6a0a653",
     "url": "/pathOfSamurai/index.html"
   },
   {
@@ -8,11 +8,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pathOfSamurai/static/css/4.659a66a3.chunk.css"
   },
   {
-    "revision": "d2e5c7c770183d6d14f1",
+    "revision": "35efccea623761d6e312",
     "url": "/pathOfSamurai/static/css/5.f3fcf5aa.chunk.css"
   },
   {
-    "revision": "1d02224b3347bc45d88b",
+    "revision": "ee32f8f1d3bdd80eebfa",
     "url": "/pathOfSamurai/static/css/6.9ff1fe9a.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pathOfSamurai/static/css/7.f861bbf2.chunk.css"
   },
   {
-    "revision": "35448ef41a25e0909f45",
+    "revision": "46c379350966fe886cea",
     "url": "/pathOfSamurai/static/css/main.e16139fc.chunk.css"
   },
   {
@@ -28,40 +28,40 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pathOfSamurai/static/js/0.ab6433a6.chunk.js"
   },
   {
-    "revision": "72a6c8a3a6382fc9a9c7",
-    "url": "/pathOfSamurai/static/js/3.83301713.chunk.js"
+    "revision": "d71206007988fa55e9bb",
+    "url": "/pathOfSamurai/static/js/3.d2003fc3.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/pathOfSamurai/static/js/3.83301713.chunk.js.LICENSE.txt"
+    "url": "/pathOfSamurai/static/js/3.d2003fc3.chunk.js.LICENSE.txt"
   },
   {
     "revision": "1e8daf271028d9a9215f",
     "url": "/pathOfSamurai/static/js/4.5559cf3f.chunk.js"
   },
   {
-    "revision": "d2e5c7c770183d6d14f1",
-    "url": "/pathOfSamurai/static/js/5.8e485d60.chunk.js"
+    "revision": "35efccea623761d6e312",
+    "url": "/pathOfSamurai/static/js/5.20c7d46d.chunk.js"
   },
   {
     "revision": "81896c98bac7b5b16ab1d3790da5b937",
-    "url": "/pathOfSamurai/static/js/5.8e485d60.chunk.js.LICENSE.txt"
+    "url": "/pathOfSamurai/static/js/5.20c7d46d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1d02224b3347bc45d88b",
-    "url": "/pathOfSamurai/static/js/6.cc537e32.chunk.js"
+    "revision": "ee32f8f1d3bdd80eebfa",
+    "url": "/pathOfSamurai/static/js/6.955c5e85.chunk.js"
   },
   {
     "revision": "29b287b53b782c3ec9b6",
     "url": "/pathOfSamurai/static/js/7.85955cb0.chunk.js"
   },
   {
-    "revision": "35448ef41a25e0909f45",
-    "url": "/pathOfSamurai/static/js/main.a5abea00.chunk.js"
+    "revision": "46c379350966fe886cea",
+    "url": "/pathOfSamurai/static/js/main.ea161149.chunk.js"
   },
   {
-    "revision": "1b664481ada04821a315",
-    "url": "/pathOfSamurai/static/js/runtime-main.f2bde296.js"
+    "revision": "dc9ebfd319f971aa5c2a",
+    "url": "/pathOfSamurai/static/js/runtime-main.e12fc19b.js"
   },
   {
     "revision": "d520bb87546b8e9f83bb1e34060cd4ad",
